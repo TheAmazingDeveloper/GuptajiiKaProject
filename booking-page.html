@@ -33,50 +33,68 @@
         </div>
 
         <!-- Study Room Options (Initially Hidden) -->
-        <div id="studyRoomOptions" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            <!-- Group Discussion Room -->
-            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
-                <h2 class="text-2xl font-semibold mb-4">Group Discussion Room</h2>
-                <p class="text-gray-600 mb-4">Book a room for group discussions and collaborative work.</p>
-                <a href="#" class="block text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Book Group Room</a>
-            </div>
+        <div id="studyRoomOptions" class="hidden mt-8">
+            <h2 class="text-2xl font-bold mb-6">Study Room Options</h2>
+            <div class="space-y-4">
+                <!-- Group Discussion Room -->
+                <div class="bg-blue-100 rounded-lg p-4 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-semibold">Group Discussion Room</h3>
+                        <p class="text-gray-600">Book a room for group discussions and collaborative work.</p>
+                    </div>
+                    <a href="study-room-booking.html" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Book Now</a>
+                </div>
 
-            <!-- Focus Room -->
-            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
-                <h2 class="text-2xl font-semibold mb-4">Focus Room</h2>
-                <p class="text-gray-600 mb-4">Reserve a quiet space for individual focused study.</p>
-                <a href="#" class="block text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Book Focus Room</a>
-            </div>
+                <!-- Focus Room -->
+                <div class="bg-green-100 rounded-lg p-4 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-semibold">Focus Room</h3>
+                        <p class="text-gray-600">Reserve a quiet space for individual focused study.</p>
+                    </div>
+                    <a href="study-room-booking.html" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition duration-300">Book Now</a>
+                </div>
 
-            <!-- E-Library -->
-            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
-                <h2 class="text-2xl font-semibold mb-4">E-Library</h2>
-                <p class="text-gray-600 mb-4">Access digital resources and e-learning facilities.</p>
-                <button onclick="showELibraryOptions()" class="w-full text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Access E-Library</button>
+                <!-- E-Library -->
+                <div class="bg-purple-100 rounded-lg p-4 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-semibold">E-Library</h3>
+                        <p class="text-gray-600">Access digital resources and e-learning facilities.</p>
+                    </div>
+                    <button onclick="showELibraryOptions()" class="bg-purple-500 text-white py-2 px-4 rounded hover:bg-purple-600 transition duration-300">Access</button>
+                </div>
             </div>
         </div>
 
         <!-- E-Library Options (Initially Hidden) -->
-        <div id="eLibraryOptions" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            <!-- Rent e-book -->
-            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
-                <h2 class="text-2xl font-semibold mb-4">Rent e-book</h2>
-                <p class="text-gray-600 mb-4">Browse and rent from our collection of e-books.</p>
-                <a href="#" class="block text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Rent e-book</a>
-            </div>
+        <div id="eLibraryOptions" class="hidden mt-8">
+            <h2 class="text-2xl font-bold mb-6">E-Library Services</h2>
+            <div class="space-y-4">
+                <!-- Rent e-book -->
+                <div class="bg-yellow-100 rounded-lg p-4 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-semibold">Rent e-book</h3>
+                        <p class="text-gray-600">Browse and rent from our collection of e-books.</p>
+                    </div>
+                    <a href="study-room-booking.html" class="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600 transition duration-300">Rent Now</a>
+                </div>
 
-            <!-- Internet Facility -->
-            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
-                <h2 class="text-2xl font-semibold mb-4">Internet Facility</h2>
-                <p class="text-gray-600 mb-4">Access high-speed internet for your research needs.</p>
-                <a href="#" class="block text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Use Internet</a>
-            </div>
+                <!-- Internet Facility -->
+                <div class="bg-indigo-100 rounded-lg p-4 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-semibold">Internet Facility</h3>
+                        <p class="text-gray-600">Access high-speed internet for your research needs.</p>
+                    </div>
+                    <a href="study-room-booking.html" class="bg-indigo-500 text-white py-2 px-4 rounded hover:bg-indigo-600 transition duration-300">Use Now</a>
+                </div>
 
-            <!-- E-room Chatbox -->
-            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
-                <h2 class="text-2xl font-semibold mb-4">E-room Chatbox</h2>
-                <p class="text-gray-600 mb-4">Collaborate with peers through our e-room chatbox.</p>
-                <a href="#" class="block text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Open Chatbox</a>
+                <!-- E-room Chatbox -->
+                <div class="bg-pink-100 rounded-lg p-4 flex justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-semibold">E-room Chatbox</h3>
+                        <p class="text-gray-600">Collaborate with peers through our e-room chatbox.</p>
+                    </div>
+                    <a href="study-room-booking.html" class="bg-pink-500 text-white py-2 px-4 rounded hover:bg-pink-600 transition duration-300">Open Now</a>
+                </div>
             </div>
         </div>
     </div>
@@ -94,4 +112,3 @@
     </script>
 </body>
 </html>
-
