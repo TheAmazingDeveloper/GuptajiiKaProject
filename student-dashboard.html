@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Booking Options -->
+            <div class="lg:w-1/2 flex flex-col items-center justify-center space-y-6">
+                <h2 class="text-3xl font-bold mb-6">Booking Options</h2>
+                <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg w-64">
+                    Immediate Booking
+                </button>
+                <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg w-64">
+                    Reservation
+                </button>
+            </div>
+
+            <!-- Calendar and To-Do List -->
+            <div class="lg:w-1/2 space-y-8">
+                <!-- To-Do List -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-4">To-Do List</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span>Complete Math Assignment</span>
+                        </li>
+                        <li class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span>Study for Physics Test</span>
+                        </li>
+                        <li class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span>Submit Research Paper</span>
+                        </li>
+                        <li class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span>Attend Group Project Meeting</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Calendar -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-4">Calendar</h3>
+                    <div class="flex justify-between items-center mb-4">
+                        <button id="prevMonth" class="text-gray-600 hover:text-gray-800">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <h4 class="text-lg font-semibold" id="currentMonth"></h4>
+                        <button id="nextMonth" class="text-gray-600 hover:text-gray-800">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-7 gap-2">
+                        <div class="text-center font-bold">Sun</div>
+                        <div class="text-center font-bold">Mon</div>
+                        <div class="text-center font-bold">Tue</div>
+                        <div class="text-center font-bold">Wed</div>
+                        <div class="text-center font-bold">Thu</div>
+                        <div class="text-center font-bold">Fri</div>
+                        <div class="text-center font-bold">Sat</div>
+                    </div>
+                    <div id="calendarDays" class="grid grid-cols-7 gap-2">
+                        <!-- Calendar days will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"];
+
+        let currentDate = new Date();
+
+        function generateCalendar(year, month) {
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const daysInMonth = lastDay.getDate();
+            const startingDay = firstDay.getDay();
+
+            const calendarDays = document.getElementById('calendarDays');
+            calendarDays.innerHTML = '';
+
+            document.getElementById('currentMonth').textContent = `${monthNames[month]} ${year}`;
+
+            for (let i = 0; i < startingDay; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.className = 'text-center py-2 border text-gray-400';
+                calendarDays.appendChild(emptyDay);
+            }
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'text-center py-2 border';
+                dayElement.textContent = day;
+                calendarDays.appendChild(dayElement);
+            }
+        }
+
+        function updateCalendar() {
+            generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+        }
+
+        document.getElementById('prevMonth').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            updateCalendar();
+        });
+
+        document.getElementById('nextMonth').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            updateCalendar();
+        });
+
+        // Initial calendar generation
+        updateCalendar();
+    </script>
+</body>
+</html>
