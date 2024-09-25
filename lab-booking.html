@@ -66,15 +66,17 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             popup.classList.remove('hidden');
+            setTimeout(() => {
+                window.location.href = 'confirmation.html';
+            }, 2000); // Redirect after 2 seconds
         });
 
         function closePopup() {
             popup.classList.add('hidden');
             form.reset();
             additionalFields.classList.add('hidden');
+            window.location.href = 'confirmation.html';
         }
     </script>
 </body>
 </html>
-
-

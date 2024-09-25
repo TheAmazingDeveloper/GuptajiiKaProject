@@ -21,7 +21,7 @@
                     <div>
                         <h2 class="text-xl font-semibold mb-2">Peer to Peer Resource Sharing</h2>
                         <p class="text-gray-600 mb-4">Share and access study materials with your peers.</p>
-                        <a href="#" class="text-blue-500 hover:text-blue-700 font-medium">Access Resource Sharing →</a>
+                        <a href="#" onclick="redirectToConfirmation()" class="text-blue-500 hover:text-blue-700 font-medium">Access Resource Sharing →</a>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                     <div>
                         <h2 class="text-xl font-semibold mb-2">Doubt Clearing Sessions</h2>
                         <p class="text-gray-600 mb-4">Schedule sessions with faculties to clear your doubts.</p>
-                        <a href="#" class="text-green-500 hover:text-green-700 font-medium">Book a Session →</a>
+                        <a href="#" onclick="redirectToConfirmation()" class="text-green-500 hover:text-green-700 font-medium">Book a Session →</a>
                     </div>
                 </div>
             </div>
@@ -53,11 +53,17 @@
                     <div>
                         <h2 class="text-xl font-semibold mb-2">Refreshments</h2>
                         <p class="text-gray-600 mb-4">Order snacks and beverages to keep you energized.</p>
-                        <a href="#" class="text-yellow-500 hover:text-yellow-700 font-medium">Order Refreshments →</a>
+                        <a href="#" onclick="redirectToConfirmation()" class="text-yellow-500 hover:text-yellow-700 font-medium">Order Refreshments →</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        function redirectToConfirmation() {
+            window.location.href = 'confirmation.html';
+        }
+    </script>
 </body>
 </html>
