@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow-md p-8 max-w-md w-full">
+        <h1 class="text-2xl font-bold mb-6 text-center">Lab Booking</h1>
+        
+        <form id="bookingForm" class="space-y-4">
+            <div>
+                <label for="labName" class="block text-sm font-medium text-gray-700 mb-1">Lab Name</label>
+                <input type="text" id="labName" name="labName" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div id="additionalFields" class="hidden space-y-4">
+                <div>
+                    <label for="equipment" class="block text-sm font-medium text-gray-700 mb-1">Equipment Required</label>
+                    <input type="text" id="equipment" name="equipment" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                
+                <div class="flex space-x-4">
+                    <button type="button" id="virtualView" class="flex-1 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Virtual View</button>
+                    <button type="button" id="3dModel" class="flex-1 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">3-D Model</button>
+                </div>
+
+                <div>
+                    <label for="deposit" class="block text-sm font-medium text-gray-700 mb-1">Security Deposit ($)</label>
+                    <input type="number" id="deposit" name="deposit" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label for="duration" class="block text-sm font-medium text-gray-700 mb-1">Time Duration (hours)</label>
+                    <input type="number" id="duration" name="duration" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <button type="submit" id="submitBtn" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">Book Lab</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="popup" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+            <p class="text-xl font-semibold">Table has been allotted.</p>
+            <button onclick="closePopup()" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('bookingForm');
+        const labNameInput = document.getElementById('labName');
+        const additionalFields = document.getElementById('additionalFields');
+        const popup = document.getElementById('popup');
+
+        labNameInput.addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                additionalFields.classList.remove('hidden');
+            } else {
+                additionalFields.classList.add('hidden');
+            }
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            popup.classList.remove('hidden');
+        });
+
+        function closePopup() {
+            popup.classList.add('hidden');
+            form.reset();
+            additionalFields.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
+
+
