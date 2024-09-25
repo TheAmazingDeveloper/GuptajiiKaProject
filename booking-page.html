@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Options</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Choose a Booking Option</h1>
+        <div id="mainOptions" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Study Room Option -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                <h2 class="text-2xl font-semibold mb-4">Study Room</h2>
+                <p class="text-gray-600 mb-4">Book a quiet space for individual or group study sessions.</p>
+                <button onclick="showStudyRoomOptions()" class="w-full text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Book Study Room</button>
+            </div>
+
+            <!-- Sports Option -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                <h2 class="text-2xl font-semibold mb-4">Sports</h2>
+                <p class="text-gray-600 mb-4">Reserve sports facilities for your athletic activities.</p>
+                <a href="#" class="block text-center bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300">Book Sports Facility</a>
+            </div>
+
+            <!-- Laboratory Option -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                <h2 class="text-2xl font-semibold mb-4">Laboratory</h2>
+                <p class="text-gray-600 mb-4">Schedule time in our well-equipped laboratories for your experiments.</p>
+                <a href="#" class="block text-center bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600 transition duration-300">Book Laboratory</a>
+            </div>
+        </div>
+
+        <!-- Study Room Options (Initially Hidden) -->
+        <div id="studyRoomOptions" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <!-- Group Discussion Room -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                <h2 class="text-2xl font-semibold mb-4">Group Discussion Room</h2>
+                <p class="text-gray-600 mb-4">Book a room for group discussions and collaborative work.</p>
+                <a href="#" class="block text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Book Group Room</a>
+            </div>
+
+            <!-- Focus Room -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                <h2 class="text-2xl font-semibold mb-4">Focus Room</h2>
+                <p class="text-gray-600 mb-4">Reserve a quiet space for individual focused study.</p>
+                <a href="#" class="block text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Book Focus Room</a>
+            </div>
+
+            <!-- E-Library -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                <h2 class="text-2xl font-semibold mb-4">E-Library</h2>
+                <p class="text-gray-600 mb-4">Access digital resources and e-learning facilities.</p>
+                <button onclick="showELibraryOptions()" class="w-full text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Access E-Library</button>
+            </div>
+        </div>
+
+        <!-- E-Library Options (Initially Hidden) -->
+        <div id="eLibraryOptions" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <!-- Rent e-book -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                <h2 class="text-2xl font-semibold mb-4">Rent e-book</h2>
+                <p class="text-gray-600 mb-4">Browse and rent from our collection of e-books.</p>
+                <a href="#" class="block text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Rent e-book</a>
+            </div>
+
+            <!-- Internet Facility -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                <h2 class="text-2xl font-semibold mb-4">Internet Facility</h2>
+                <p class="text-gray-600 mb-4">Access high-speed internet for your research needs.</p>
+                <a href="#" class="block text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Use Internet</a>
+            </div>
+
+            <!-- E-room Chatbox -->
+            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+                <h2 class="text-2xl font-semibold mb-4">E-room Chatbox</h2>
+                <p class="text-gray-600 mb-4">Collaborate with peers through our e-room chatbox.</p>
+                <a href="#" class="block text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Open Chatbox</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showStudyRoomOptions() {
+            document.getElementById('mainOptions').classList.add('hidden');
+            document.getElementById('studyRoomOptions').classList.remove('hidden');
+        }
+
+        function showELibraryOptions() {
+            document.getElementById('studyRoomOptions').classList.add('hidden');
+            document.getElementById('eLibraryOptions').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
+
