@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Facility Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-r from-blue-100 to-purple-100 min-h-screen flex items-center justify-center p-4" style="font-family: 'Poppins', sans-serif;">
+    <div class="bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-md">
+        <div class="p-8">
+            <h1 class="text-3xl font-bold text-center mb-8 text-indigo-800">Sports Facility Booking</h1>
+            
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold mb-4 text-gray-700">Choose Your Venue:</h2>
+                <div class="flex justify-center space-x-4">
+                    <button onclick="showOptions('indoor')" class="transform hover:scale-105 transition-transform duration-300 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
+                        Indoor
+                    </button>
+                    <button onclick="showOptions('outdoor')" class="transform hover:scale-105 transition-transform duration-300 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
+                        Outdoor
+                    </button>
+                </div>
+            </div>
+
+            <div id="indoorOptions" class="hidden animate-fade-in-down">
+                <div class="mb-6">
+                    <label for="roomNo" class="block text-gray-700 text-sm font-bold mb-2">Room Number:</label>
+                    <input type="text" id="roomNo" class="w-full px-4 py-2 rounded-full border-2 border-blue-300 focus:outline-none focus:border-blue-500 transition-colors">
+                </div>
+            </div>
+
+            <div id="outdoorOptions" class="hidden animate-fade-in-down">
+                <div class="mb-6">
+                    <label for="groundName" class="block text-gray-700 text-sm font-bold mb-2">Ground Name:</label>
+                    <input type="text" id="groundName" class="w-full px-4 py-2 rounded-full border-2 border-green-300 focus:outline-none focus:border-green-500 transition-colors">
+                </div>
+            </div>
+
+            <div id="additionalOptions" class="hidden space-y-6 animate-fade-in-down">
+                <div>
+                    <label for="equipment" class="block text-gray-700 text-sm font-bold mb-2">Equipment Required:</label>
+                    <input type="text" id="equipment" class="w-full px-4 py-2 rounded-full border-2 border-indigo-300 focus:outline-none focus:border-indigo-500 transition-colors">
+                </div>
+                <div>
+                    <label for="startTime" class="block text-gray-700 text-sm font-bold mb-2">Start Time:</label>
+                    <input type="time" id="startTime" class="w-full px-4 py-2 rounded-full border-2 border-indigo-300 focus:outline-none focus:border-indigo-500 transition-colors">
+                </div>
+                <div>
+                    <label for="duration" class="block text-gray-700 text-sm font-bold mb-2">Time Duration (hours):</label>
+                    <input type="number" id="duration" class="w-full px-4 py-2 rounded-full border-2 border-indigo-300 focus:outline-none focus:border-indigo-500 transition-colors">
+                </div>
+                <div>
+                    <label for="deposit" class="block text-gray-700 text-sm font-bold mb-2">Security Deposit ($):</label>
+                    <input type="number" id="deposit" class="w-full px-4 py-2 rounded-full border-2 border-indigo-300 focus:outline-none focus:border-indigo-500 transition-colors">
+                </div>
+                <div>
+                    <label for="limit" class="block text-gray-700 text-sm font-bold mb-2">Booking Limit (hours):</label>
+                    <input type="number" id="limit" class="w-full px-4 py-2 rounded-full border-2 border-indigo-300 focus:outline-none focus:border-indigo-500 transition-colors">
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <button onclick="submitBooking()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+                    Book Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translate3d(0, -20px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        .animate-fade-in-down {
+            animation: fadeInDown 0.5s ease-out;
+        }
+    </style>
+
+    <script>
+        function showOptions(type) {
+            document.getElementById('indoorOptions').classList.add('hidden');
+            document.getElementById('outdoorOptions').classList.add('hidden');
+            document.getElementById(`${type}Options`).classList.remove('hidden');
+            document.getElementById('additionalOptions').classList.remove('hidden');
+        }
+
+        function submitBooking() {
+            // Here you can add the logic to handle the booking submission
+            alert('Your booking has been confirmed!');
+        }
+    </script>
+</body>
+</html>
